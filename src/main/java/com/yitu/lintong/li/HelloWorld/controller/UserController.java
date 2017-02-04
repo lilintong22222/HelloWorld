@@ -5,6 +5,7 @@ import com.yitu.lintong.li.HelloWorld.service.UserService;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
@@ -21,5 +22,11 @@ public class UserController {
         User user = userService.getUserById(userId);
         model.addAttribute("user", user);
         return "userShow";
+    }
+
+    @ResponseBody
+    @RequestMapping("/test")
+    public String test() {
+        return "Hello World";
     }
 }
