@@ -23,10 +23,4 @@ public class UserController {
         model.addAttribute("user", user);
         return "userShow";
     }
-
-    @ResponseBody
-    @RequestMapping("/test")
-    public String test() {
-        return "Hello World";
-    }
 }
